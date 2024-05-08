@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+         <h2>Password Generator</h2>
+        <label>Choose length<input type="number" name="length" id="totalChar" max="20" min="1" value="8"> </label><br>
+        <label> Must contain uppercase<input type="checkbox" name="uppercase" id="uppercase"></label><br>
+        <label>Must contain lowercase<input type="checkbox" name="lowercase" id="lowercase"> </label><br>
+        <label>Must contain special character<input type="checkbox" name="specialChar" id="symbol"></label><br>
+        <label>Must contain numbers<input type="checkbox" name="numbers" id="number" > </label><br><br>
+        <button id="genBtn">Generate Password</button><br><br>
+        <input type="text" id="passBox">
+       
+</div>
+</body>
+<script src="script.js"></script>
+</html>
