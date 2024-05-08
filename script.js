@@ -5,9 +5,10 @@ let symbol=document.getElementById("symbol");
 let number=document.getElementById("number");
 let passBox=document.getElementById("passBox");
 let genBtn=document.getElementById("genBtn");
+let quantityInput = document.getElementById("quantityInput");
 
 genBtn.addEventListener('click',()=>{
-    passBox.value=generatePassword();
+    generatePasswords();
 });
 
 let upperChars="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -21,33 +22,6 @@ function generatePassword(){
     allChar+=uppercase.checked ? upperChars :"";
     allChar+=number.checked ? allNumbers :"";
     allChar+=symbol.checked ? allSymbols :"";
-   
-    // if(lowercase.checked==true){
-    //     allChar+=lowerChars;
-    // }
-    // else{
-    //     allChar+="";
-    // }
-    // if(uppercase.checked==true){
-    //     allChar+=upperChars;
-    // }
-    // else{
-    //     allChar+="";
-    // }
-    // if(number.checked==true){
-    //     allChar+=allNumbers;
-    // }
-    // else{
-    //     allChar+="";
-    // }
-    // if(symbol.checked==true){
-    //     allChar+=allSymbols;
-    // }
-    // else{
-    //     allChar+="";
-        
-    // }
-
 
     let i=1;
     while(i<=lengthValue.value){
@@ -55,4 +29,12 @@ function generatePassword(){
         i++;
     }
     return genPassword;
+}
+function generatePasswords() {
+    let quantity = quantityInput.value;
+    let passwords = [];
+    for (let i = 0; i < quantity; i++) {
+        passwords.push(generatePassword());
+    }
+    passBox.value = passwords.join('\n');
 }
